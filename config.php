@@ -4,7 +4,7 @@ $config = [
     'server' => 'localhost',
     'database' => 'portfolio',
     'username' => 'root',
-    'password' => '',
+    'password' => 'root',
     'port' => 3306
 ];
 
