@@ -1,0 +1,187 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+
+  :root {
+    --card-height: 40rem;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+*{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 25rem;
+}
+
+article{
+    height: 30rem;
+    width: 20rem;
+    background-color: black;
+}
+
+.cards-section{
+    height: auto;
+    background-color: #4E5A61;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .cards-section > h2{
+    color: white;
+  }
+
+  .cards{
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .card {
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    transition: 0.3s;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .card-top{
+    background: red;
+    height: 70%;
+    width: 100%;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+  }
+
+  .card-title{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .card-bottom{
+    background: #9aabb5;
+    height: 30%;
+    width: 100%;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+  }
+
+  .card-bottom > button{
+    border: none;
+    width: 16rem;
+    height: 7rem;
+    color: #055973;
+    background-color: #055973;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    transition: 0.3s;
+  }
+
+  .card-bottom > button:hover{
+    background-color: #033a4b;
+  }
+
+  .card-bottom > button > img{
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .card-bottom > a{
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .card:hover {
+    transform: scale(1.2);
+  }
+  
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #055973, #012029 43%, #055973);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #055973, #012029 43%, #055973);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  .detail-p{
+    color: black;
+    font-size: 10rem;
+  }
+
+  .detail-card-top{
+    background: red;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+  }
