@@ -30,7 +30,7 @@ $result = $connection->query('SELECT * FROM `project`')
             </div>
             <div class="card-bottom">
                 <button>
-                    <img src="images/github.jpg" alt="favicon van github">
+                    <img src="images/github.png" alt="favicon van github">
                     <a class="a" href="#">Github</a>
                 </button>
             </div>
