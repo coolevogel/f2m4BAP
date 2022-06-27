@@ -306,6 +306,14 @@ img {
   display: inline-block;
 }
 
+.form__error{
+  color: #ffffff;
+  background-color: var(--venetian-red);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
 /* Media queries */
 @media all and (min-width: 900px) {
   .place-details section {
